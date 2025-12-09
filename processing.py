@@ -51,7 +51,6 @@ def apply_global_threshold(gray: np.ndarray, config: PipelineConfig) -> Tuple[np
 		threshold = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_TRIANGLE)[0]
 		return cv2.threshold(gray, threshold, 255, cv2.THRESH_BINARY)[1], int(threshold)
 
-	# default: otsu
 	threshold = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[0]
 	return cv2.threshold(gray, threshold, 255, cv2.THRESH_BINARY)[1], int(threshold)
 
